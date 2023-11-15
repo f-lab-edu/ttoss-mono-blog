@@ -12,6 +12,9 @@
   "engines": {
     "node": ">=16"
   },
+  "scripts": {
+    "test": "jest"
+  },
   "dependencies": {
     "eslint-config-airbnb": "workspace:*"
   }
