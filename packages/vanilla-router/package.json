@@ -1,0 +1,13 @@
+{
+  "name": "vanilla-router",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/f-lab-edu/ttoss-mono-blog.git",
+    "directory": "packages/vanilla-router"
+  },
+  "author": "emayom <emayom7@gmail.com>",
+  "type": "module",
+  "dependencies": {}
+}
