@@ -38,3 +38,6 @@ yarn-error.log*
 # editor
 .vscode/*
 !.vscode/settings.json
+
+# parcel
+.parcel-cache
