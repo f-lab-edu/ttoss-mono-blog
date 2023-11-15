@@ -1,0 +1,18 @@
+{
+  "name": "vanilla-mvc-todo",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/f-lab-edu/ttoss-mono-blog.git",
+    "directory": "packages/vanilla-mvc-todo"
+  },
+  "author": "emayom <emayom7@gmail.com>",
+  "type": "module",
+  "engines": {
+    "node": ">=16"
+  },
+  "scripts": {
+    "test": "jest"
+  }
+}
