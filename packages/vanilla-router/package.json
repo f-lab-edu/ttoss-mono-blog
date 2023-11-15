@@ -9,5 +9,10 @@
   },
   "author": "emayom <emayom7@gmail.com>",
   "type": "module",
-  "dependencies": {}
+  "engines": {
+    "node": ">=16"
+  },
+  "dependencies": {
+    "eslint-config-airbnb": "workspace:*"
+  }
 }
