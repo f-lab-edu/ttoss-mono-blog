@@ -127,7 +127,7 @@ export default (function () {
       this.errorCallback();
     } else {
       // 메인으로 이동
-      this.setCurrentPath('/', true);
+      this.setCurrentPath(this.base, true);
     }
   };
   /**
@@ -191,14 +191,10 @@ export default (function () {
         document.addEventListener(
           'click',
           (event) => {
-            const { dataset } = event.target;
-            const path = dataset?.resourcePath
-              ? dataset?.resourcePath
-              : event.composedPath().find((node) => node.dataset?.resourcePath)
-                ?.dataset.resourcePath;
+            const path = event.composedPath().find(({ dataset }) => dataset?.resourcePath);
 
             if (path) {
-              instance.setCurrentPath(path);
+              instance.setCurrentPath(path.dataset.resourcePath);
 
               event.preventDefault();
               event.stopPropagation();
