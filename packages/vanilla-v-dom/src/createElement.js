@@ -1,4 +1,4 @@
-import { TEXT_ELEMENT } from './constant';
+import { TEXT_ELEMENT } from './constants';
 
 /**
  * 가상의 노드에서 실제 DOM 노드 생성

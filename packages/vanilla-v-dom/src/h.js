@@ -1,4 +1,4 @@
-import { TEXT_ELEMENT } from './constant';
+import { TEXT_ELEMENT } from './constants';
 
 /**
  * 트리 구조의 가상 DOM 생성 (virtualHyperScript)
