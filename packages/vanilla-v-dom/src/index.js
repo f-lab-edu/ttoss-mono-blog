@@ -1,6 +1,6 @@
+import createVDOM from './createVDOM';
 import diff from './diff';
 import patch from './patch';
-import createElement from './createElement';
 
 /**
  * @param {HTMLElement} container
@@ -8,7 +8,7 @@ import createElement from './createElement';
  */
 const render = (container) => {
   /** @type {object} */
-  let virtualDOM;
+  let virtualDOM = createVDOM(container);
 
   /**
    * 현재 가상 DOM과 업데이트된 가상 DOM 간의 변경 내용을 기반으로
@@ -17,12 +17,9 @@ const render = (container) => {
    * @param {object} updated
    */
   return function (updated) {
-    if (!virtualDOM) {
-      // 가상 DOM이 정의되지 않았을 경우, 초기 DOM 생성
-      container.replaceWith(createElement(updated));
-    } else {
-      // 변경 내용을 적용
-      patch(container, diff(updated, virtualDOM));
+    // 변경 내용을 적용
+    if (virtualDOM) {
+      patch(container, diff(virtualDOM, updated));
     }
     // 가상 DOM 참조 업데이트
     virtualDOM = updated;
