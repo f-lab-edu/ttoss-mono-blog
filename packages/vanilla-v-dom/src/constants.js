@@ -4,7 +4,7 @@ export const PATCH_TEXT = 'PATCH_TEXT';
 
 export const PATCH_PROPS = 'PATCH_PROPS';
 
-export const PATCH_CHILD = 'PATCH_CHILD';
+export const PATCH_CHILDREN = 'PATCH_CHILDREN';
 
 export const PATCH_CREATE_NODE = 'PATCH_CREATE_NODE';
 
