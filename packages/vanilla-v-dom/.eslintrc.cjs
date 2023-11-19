@@ -19,6 +19,7 @@ module.exports = {
   extends: ['airbnb', 'eslint:recommended', 'plugin:import/recommended'],
   rules: {
     'func-names': ['error', 'never'],
+    'no-use-before-define': ['error', { variables: false }],
   },
   parserOptions: {
     ecmaVersion: 'latest',
