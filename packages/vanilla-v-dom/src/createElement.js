@@ -23,7 +23,7 @@ const createElement = ({ type, props, children }) => {
   // children이 존재하면 추가
   if (children && Array.isArray(children)) {
     children.forEach((child) => {
-      node.append(createElement(child));
+      if (child) node.append(createElement(child));
     });
   }
 
