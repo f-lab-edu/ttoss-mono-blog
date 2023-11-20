@@ -1,4 +1,5 @@
 import createVDOM from './createVDOM';
+import h from './h';
 import diff from './diff';
 import patch from './patch';
 
@@ -34,4 +35,4 @@ const createRoot = (domNode) => ({
   render: render.call(this, domNode),
 });
 
-export default { createRoot };
+export { h, createRoot };
