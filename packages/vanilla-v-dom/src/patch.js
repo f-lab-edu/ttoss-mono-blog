@@ -27,11 +27,6 @@ const apply = multi(
     node.appendChild(createElement(changes.update))
   )),
 
-  // 노드 제거
-  method(PATCH_REMOVE_NODE, (node) => (
-    node.remove()
-  )),
-
   // 기존 노드 변경
   method(PATCH_REPLACE_NODE, (node, changes) => (
     node.replaceWith(createElement(changes.update))
@@ -45,12 +40,20 @@ const apply = multi(
     });
   }),
 
-  // 해당 노드의 변경 사항은 없지만, 자식 노드의 변경 사항이 존재할 경우
+  /// 해당 노드의 변경 사항은 없지만, 자식 노드의 변경 사항이 존재할 경우
   method(PATCH_CHILDREN, (node, changes) => {
+    const nodesToRemove = [];
+
     changes.children.forEach((childPatchArray, idx) => {
       // 하나의 노드에도 n개의 변경 사항이 존재할 수 있다.
-      childPatchArray.forEach((patch) => apply((node.childNodes[idx] || node), patch));
+      childPatchArray.forEach((patch) => {
+        if (patch.type === PATCH_REMOVE_NODE) nodesToRemove.push(node.childNodes[idx]);
+        else apply(node.childNodes[idx] || node, patch);
+      });
     });
+
+    // 인덱스 문제로 따로 처리
+    nodesToRemove.forEach((targetNode) => targetNode.parentNode?.removeChild(targetNode));
   }),
 );
 
