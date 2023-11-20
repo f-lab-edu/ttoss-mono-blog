@@ -17,11 +17,17 @@ const diffProps = (current, updated) => {
   const currentKeys = Object.keys(current);
   const updatedKeys = Object.keys(updated);
 
-  // 기존에 존재하지 않던 프로퍼티가 추가된 경우
-  if (!currentKeys.length) return updated;
+  // 기존에 존재하지 않던 프로퍼티가 추가된 경우 업데이트, 업데이트가 없다면 null
+  if (!currentKeys.length) {
+    if (!updatedKeys.length) return null;
+    return updated;
+  }
 
-  // 키의 변경사항이 없는 경우 값만 업데이트
-  if (currentKeys.join() === updatedKeys.join()) return { ...current, ...updated };
+  // 키의 변경사항이 없는 경우 값만 업데이트, 업데이트가 없다면 null
+  if (currentKeys.join() === updatedKeys.join()) {
+    const diffKeys = currentKeys.filter((key) => current[key] !== updated[key]);
+    return (diffKeys.length) ? { ...current, ...updated } : null;
+  }
 
   // 이외의 키의 삭제, 추가 사항이 존재할 경우
   return { ...currentKeys.reduce((a, v) => ({ ...a, [v]: null }), {}), ...updated };
@@ -100,7 +106,7 @@ const diff = (current, update) => {
     if (current.children && update.children) {
       const children = diffChildren(current.children, update.children);
 
-      if (children.length) {
+      if (children.flat().length) {
         patches.push({
           type: PATCH_CHILDREN,
           children,
