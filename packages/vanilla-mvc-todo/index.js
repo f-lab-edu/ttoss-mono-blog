@@ -1,12 +1,10 @@
 import Model from './src/model';
 import View from './src/view';
+import Template from './src/template';
 import Controller from './src/controller';
 
-const model = new Model();
-const view = new View();
-const controller = new Controller(model, view);
+const controller = new Controller(new Model(), new View(Template));
+const windowEventHandler = () => controller.setView(window.location.hash);
 
-const setView = controller.setView.call(controller, window.location.hash);
-
-window.addEventListener('DOMContentLoaded', setView);
-window.addEventListener('hashchange', setView);
+window.addEventListener('DOMContentLoaded', windowEventHandler);
+window.addEventListener('hashchange', windowEventHandler);
