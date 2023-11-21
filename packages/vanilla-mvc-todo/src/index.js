@@ -1,7 +1,7 @@
-import Model from './src/model';
-import View from './src/view';
-import Template from './src/template';
-import Controller from './src/controller';
+import Model from './model';
+import View from './view';
+import Template from './template';
+import Controller from './controller';
 
 const controller = new Controller(new Model(), new View(Template));
 const windowEventHandler = () => controller.setView(window.location.hash);
