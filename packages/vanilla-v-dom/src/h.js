@@ -1,7 +1,7 @@
 import { TEXT_ELEMENT } from './constants';
 
 /**
- * 트리 구조의 가상 DOM 생성 (virtualHyperScript)
+ * 가상 DOM Object 생성
  * @param {string} type
  * @param {object} props
  * @param  {...(string|object)} children
@@ -17,7 +17,7 @@ const h = (type, props, ...children) => ({
     }
     // 아니면 자식 노드로 처리
     return child;
-  }),
+  }).filter(Boolean),
 });
 
 export default h;
