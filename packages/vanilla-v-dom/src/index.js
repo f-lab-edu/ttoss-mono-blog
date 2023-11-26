@@ -31,8 +31,14 @@ const render = (container) => {
  * @param {HTMLElement} domNode
  * @returns {object}
  */
-const createRoot = (domNode) => ({
-  render: render.call(this, domNode),
-});
+const createRoot = (domNode) => {
+  if (!(domNode instanceof HTMLElement)) {
+    throw new Error(`arguments[0] requires a HTMLElement but got a ${Object.prototype.toString.call(domNode)}`);
+  }
+
+  return {
+    render: render.call(this, domNode),
+  };
+};
 
 export { h, createRoot };
