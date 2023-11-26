@@ -24,12 +24,15 @@ const createElement = ({ type, props, children }) => {
 
   const node = document.createElement(type);
 
-  // props가 존재하면 속성 설정
   if (props && isObject(props)) {
-    Object.entries(props).forEach(([key, value]) => node.setAttribute(key, value));
+    Object.entries(props).forEach(([key, value]) => {
+      // HTMLInputElement의 경우 checked="false" 또한 checked로 처리
+      if (key === 'checked') node.checked = value;
+
+      node.setAttribute(key, value);
+    });
   }
 
-  // children이 존재하면 추가
   if (children && Array.isArray(children)) {
     children.forEach((child) => {
       if (child && isObject(child)) {
