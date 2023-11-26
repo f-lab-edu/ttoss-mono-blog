@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import {
   TEXT_ELEMENT,
   PATCH_TEXT,
@@ -39,6 +40,8 @@ const diffProps = (current, updated) => {
  * @returns {object[] | []} 자식 노드들의 변경 사항
  */
 const diffChildren = (current, update) => {
+  if (_.isEqual(current, update)) return [];
+
   if (current.length > update.length) {
     return current.map((child, idx) => diff(child, update[idx])).filter(Boolean);
   }
@@ -49,7 +52,7 @@ const diffChildren = (current, update) => {
 /**
  * @param {object} current
  * @param {object} update
- * @returns {object[] | []} DOM 전체 변경 사항
+ * @returns {object[] | []} current, update 전체 변경 사항
  */
 const diff = (current, update) => {
   // 1. 업데이트로 추가 된 경우
@@ -114,7 +117,7 @@ const diff = (current, update) => {
     if (current.children && update.children) {
       const children = diffChildren(current.children, update.children);
 
-      if (children.flat().length) {
+      if (children && children.flat().length) {
         patches.push({
           type: PATCH_CHILDREN,
           children,
