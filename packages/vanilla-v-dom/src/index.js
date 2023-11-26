@@ -17,7 +17,9 @@ const render = (container) => {
    *
    * @param {object} updated
    */
-  return function (updated) {
+  return (updated) => {
+    if (!updated) throw new Error('Missing required param: updated');
+
     // 변경 내용을 적용
     if (virtualDOM) {
       patch(container, diff(virtualDOM, updated));
