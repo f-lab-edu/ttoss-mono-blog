@@ -1,0 +1,27 @@
+{
+  "name": "vanilla-deep-clone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/f-lab-edu/ttoss-mono-blog.git",
+    "directory": "packages/vanilla-deep-clone"
+  },
+  "bug": {
+    "url": "https://github.com/f-lab-edu/ttoss-mono-blog/issues"
+  },
+  "author": "emayom <emayom7@gmail.com>",
+  "type": "module",
+  "engines": {
+    "node": ">=16"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "devDependencies": {
+    "jsdom": "^23.0.0"
+  }
+}
