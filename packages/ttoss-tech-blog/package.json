@@ -20,5 +20,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "msw": "^2.0.9"
+  },
+  "msw": {
+    "workerDirectory": "./public"
+  }
 }
