@@ -1,4 +1,3 @@
-import { JSDOM } from 'jsdom';
 import isObject from '../src/isObject';
 
 describe('isObject', () => {
@@ -18,7 +17,6 @@ describe('isObject', () => {
   });
 
   it('객체가 아니라면 `false`를 리턴한다.', () => {
-    const { document } = new JSDOM().window;
     function Foo(a) {
       return a;
     }

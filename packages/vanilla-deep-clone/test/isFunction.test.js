@@ -1,4 +1,3 @@
-import { JSDOM } from 'jsdom';
 import isFunction from '../src/isFunction';
 
 describe('isFunction', () => {
@@ -28,8 +27,6 @@ describe('isFunction', () => {
   });
 
   it('Function이 아니라면 `false`를 리턴한다.', () => {
-    const { document } = new JSDOM().window;
-
     expect(isFunction(1)).toBeFalsy();
     expect(isFunction('a')).toBeFalsy();
     expect(isFunction(true)).toBeFalsy();
