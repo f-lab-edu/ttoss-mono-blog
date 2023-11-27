@@ -1,0 +1,15 @@
+export const TEXT_ELEMENT = 'TEXT_ELEMENT';
+
+export const PATCH_TEXT = 'PATCH_TEXT';
+
+export const PATCH_PROPS = 'PATCH_PROPS';
+
+export const PATCH_CHILDREN = 'PATCH_CHILDREN';
+
+export const PATCH_CREATE_NODE = 'PATCH_CREATE_NODE';
+
+export const PATCH_REMOVE_NODE = 'PATCH_REMOVE_NODE';
+
+export const PATCH_REPLACE_NODE = 'PATCH_REPLACE_NODE';
+
+export const NONE_WHITE_SPACE = /\S/;

@@ -1,0 +1,36 @@
+{
+  "name": "vanilla-v-dom",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/f-lab-edu/ttoss-mono-blog.git",
+    "directory": "packages/vanilla-v-dom"
+  },
+  "bug": {
+    "url": "https://github.com/f-lab-edu/ttoss-mono-blog/issues"
+  },
+  "author": "emayom <emayom7@gmail.com>",
+  "type": "module",
+  "engines": {
+    "node": ">=16"
+  },
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "dev": "webpack server",
+    "build": "webpack --config webpack.config.cjs"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "link:./node_modules",
+    "babel-loder": "link:./node_modules",
+    "html-webpack-plugin": "^5.5.3",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  },
+  "dependencies": {
+    "@arrows/multimethod": "^2.1.0",
+    "lodash": "^4.17.21"
+  }
+}
