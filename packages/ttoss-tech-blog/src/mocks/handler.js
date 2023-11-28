@@ -1,33 +1,35 @@
 import { http, HttpResponse } from 'msw';
-
-const fs = require('node:fs');
-const path = require('path');
+import fixtures from './fixtures';
 
 const getPostResolver = ({ params }) => {
   try {
     const { title } = params;
-    const filePath = path.join(__dirname, 'fixtures', `${title}.json`);
-    const data = fs.readFileSync(filePath, 'utf8');
+    const { posts } = fixtures;
+    const data = posts.results.find(({ key }) => key === title);
 
-    return HttpResponse.json(data, { status: 200 });
+    if (!title) return new HttpResponse(null, { status: 404, statusText: 'Missing required parameter.' });
+
+    if (!posts || !data) return new HttpResponse(null, { status: 404, statusText: 'Not Found' });
+
+    return HttpResponse.json(data);
   } catch (error) {
-    return new HttpResponse(null, { status: 404 });
+    return new HttpResponse(null, { status: 500, statusText: 'Internal Server Error' });
   }
 };
 
 const getCategoryResolver = ({ request }) => {
-  const url = new URL(request.url);
-  const categoriesSlug = url.searchParams.get('categoriesSlug');
-
-  if (!categoriesSlug) return new HttpResponse(null, { status: 404 });
-
   try {
-    const filePath = path.join(__dirname, 'fixtures', `${categoriesSlug}.json`);
-    const data = fs.readFileSync(filePath, 'utf8');
+    const url = new URL(request.url);
+    const categoriesSlug = url.searchParams.get('categoriesSlug');
+    const data = fixtures[categoriesSlug];
 
-    return HttpResponse.json(data, { status: 200 });
+    if (!categoriesSlug) return new HttpResponse(null, { status: 404, statusText: 'Missing required parameter.' });
+
+    if (!data) return new HttpResponse(null, { status: 404, statusText: 'Not Found' });
+
+    return HttpResponse.json(data);
   } catch (error) {
-    return new HttpResponse(null, { status: 404 });
+    return new HttpResponse(null, { status: 500, statusText: 'Internal Server Error' });
   }
 };
 
