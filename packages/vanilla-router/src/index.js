@@ -18,7 +18,7 @@ export default (function () {
 
     this.root = root;
     this.routes = new Map();
-    this.base = options.base || '/';
+    this.basename = options?.basename || '/';
   }
   /**
    * @function
@@ -127,7 +127,7 @@ export default (function () {
       this.errorCallback();
     } else {
       // 메인으로 이동
-      this.setCurrentPath(this.base, true);
+      this.setCurrentPath(this.basename, true);
     }
   };
   /**
@@ -172,7 +172,7 @@ export default (function () {
      * ```js
      * const htmlEl = document.getElementById('id');
      * const router = createHashRouter(htmlEl, {
-     *      base: '/'
+     *      basename: '/'
      * })
      * ```
      */
