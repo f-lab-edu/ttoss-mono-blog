@@ -80,6 +80,8 @@ export default (function () {
    * @returns
    */
   Router.prototype.setParameters = function (path, params) {
+    console.log('params :: ', params);
+
     return path
       .replace(BASENAME_REGEXP, '')
       .match(/(\w+(-*\w*)*)/g)
@@ -144,9 +146,8 @@ export default (function () {
         || {};
 
       if (match.params) {
-        match.params = this.setParameters(path, match.params);
+        return { ...match, params: this.setParameters(path, match.params) };
       }
-
       return match;
     }
     return null;
