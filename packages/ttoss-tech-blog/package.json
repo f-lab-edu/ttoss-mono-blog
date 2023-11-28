@@ -17,12 +17,24 @@
     "node": ">=16"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "dev": "webpack server"
   },
   "keywords": [],
   "license": "ISC",
+  "dependencies": {
+    "vanilla-router": "workspace:*",
+    "vanilla-v-dom": "workspace:*"
+  },
   "devDependencies": {
-    "msw": "^2.0.9"
+    "@babel/preset-env": "link:./node_modules",
+    "babel-loder": "link:./node_modules",
+    "html-webpack-plugin": "^5.5.3",
+    "msw": "^2.0.9",
+    "undici": "^5.28.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
   },
   "msw": {
     "workerDirectory": "./public"
