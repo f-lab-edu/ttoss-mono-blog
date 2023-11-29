@@ -2,11 +2,11 @@
 import { h } from 'vanilla-v-dom';
 import classNames from 'classnames/bind';
 import styles from './navbar.module.css';
-import { LOGO_ARIA_LABEL } from './constants';
+import { LOGO_ARIA_LABEL, NAV_LIST } from '../constants';
 
 const cx = classNames.bind(styles);
 
-export default function NavBar(items) {
+export default function Navbar() {
   return (
     <nav class={cx('navbar')}>
       <div class={cx('navbar-inner')}>
@@ -21,7 +21,7 @@ export default function NavBar(items) {
         </div>
         <div class={cx('navbar-content')}>
           <ul class={cx('navbar-menu')}>
-            {items.map(({ title, href }) => (
+            {NAV_LIST.map(({ title, href }) => (
               <li class={cx('navbar-item')} data-resource-path={href}>
                 {title}
               </li>

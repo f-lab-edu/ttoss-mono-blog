@@ -1,7 +1,7 @@
 /** @jsx h */
 import { h } from 'vanilla-v-dom';
 import classNames from 'classnames/bind';
-import { formatDate } from '../utils';
+import { formatDate } from '../../utils';
 import styles from './articleCard.module.css';
 
 const cx = classNames.bind(styles);

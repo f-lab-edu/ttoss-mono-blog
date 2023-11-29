@@ -2,16 +2,16 @@
 import { h } from 'vanilla-v-dom';
 import classNames from 'classnames/bind';
 import styles from './footer.module.css';
-import { COMPANY_NAME, COPYRIGHT } from './constants';
+import { COMPANY_NAME, COPYRIGHT, SITE_GROUP_LISTS } from '../constants';
 
 const cx = classNames.bind(styles);
 
-export default function Footer(groups) {
+export default function Footer() {
   return (
     <footer class={cx('footer')}>
       <div class={cx('footer-inner')}>
         <div class={cx('site-group-list')}>
-          {groups.map(({ title, items }) => (
+          {SITE_GROUP_LISTS.map(({ title, items }) => (
             <ul class={cx('site-group')}>
               <li class={cx('site-group-title')}>{title}</li>
               {items.map((text) => (

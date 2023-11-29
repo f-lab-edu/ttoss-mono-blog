@@ -1,0 +1,104 @@
+.p-container {
+    width: 85%;
+    height: 100%;
+    max-width: 700px;
+    margin: auto;
+    margin-bottom: 80px;
+}
+
+.p-container > section {
+    white-space: pre-wrap;
+    font-size: 17px;
+    letter-spacing: 0em;
+    line-height: 1.6;
+    font-weight: normal;
+    color: #333d4b;
+    margin: 54px 0px 8px;
+}
+
+.thumb-img {
+    width: 100%;
+    margin-top: 36px;
+    border-radius: 12px;
+}
+
+.p-title {
+    margin-top: 20px;  
+    margin-bottom: 0px;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.25;
+    color: rgb(51, 61, 75);
+    word-break: keep-all;
+    overflow-wrap: break-word; 
+}
+
+.author-container {
+    margin-top: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+.author-container img {
+    width: 48px;
+    height: 48px;
+    border-radius: 156px;
+    margin-right: 14px;
+}
+
+.author-container .author {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-top: 8px;
+    margin: 0px;
+    margin-bottom: 2px;
+    font-size: 17px;
+    font-weight: 600;
+    color: rgb(78, 89, 104);
+    white-space: nowrap;
+}
+
+.author-container .update-time {
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgb(139, 149, 161);
+}
+
+@media only screen and (max-width: 640px){
+    .p-title {
+        font-size: 32px;
+    }
+}
+
+@media only screen and (max-width: 640px){
+    .author-container {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+    }
+
+    .author-container img {
+        margin: 0;
+    }
+
+    .author-container .author {
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+    }
+}
