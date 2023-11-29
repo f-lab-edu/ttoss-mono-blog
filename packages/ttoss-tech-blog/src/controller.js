@@ -9,6 +9,6 @@ export default class Controller {
   }
 
   setArticleList(category) {
-    this.model.getArticleList(category, (data) => this.view.renderArticleList(data));
+    this.model.getArticleList(category, (data) => this.view.renderArticleList(category, data));
   }
 }
