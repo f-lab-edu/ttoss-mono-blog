@@ -5,6 +5,8 @@ export const LIST_LABEL = {
   design: '디자인',
 };
 
+export const COPYRIGHT = 'Copyright © Viva Republica, Inc. All Rights Reserved.';
+
 export const COMPANY_NAME = '㈜비바리퍼블리카';
 
-export const COPYRIGHT = 'Copyright © Viva Republica, Inc. All Rights Reserved.';
+export const EMOJI_PROFILE = 'https://static.toss.im/3d-emojis/u1F600.png';
