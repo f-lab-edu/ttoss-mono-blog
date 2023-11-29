@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "@babel/preset-env": "link:./node_modules",
+    "@faker-js/faker": "^8.3.1",
     "babel-loder": "link:./node_modules",
     "html-webpack-plugin": "^5.5.3",
     "msw": "^2.0.9",
