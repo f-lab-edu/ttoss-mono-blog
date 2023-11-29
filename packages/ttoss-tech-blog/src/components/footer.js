@@ -1,24 +1,27 @@
 /** @jsx h */
 import { h } from 'vanilla-v-dom';
+import classNames from 'classnames/bind';
+import styles from './footer.module.css';
 import { COMPANY_NAME, COPYRIGHT } from './constants';
-import '../styles/footer.css';
+
+const cx = classNames.bind(styles);
 
 export default function Footer(groups) {
   return (
-    <footer class="footer">
-      <div class="footer-inner">
-        <div class="site-group-list">
+    <footer class={cx('footer')}>
+      <div class={cx('footer-inner')}>
+        <div class={cx('site-group-list')}>
           {groups.map(({ title, items }) => (
-            <ul class="site-group">
-              <li class="site-group-title">{title}</li>
+            <ul class={cx('site-group')}>
+              <li class={cx('site-group-title')}>{title}</li>
               {items.map((text) => (
-                <li>{text}</li>
+                <li class={cx('site-group-item')}>{text}</li>
               ))}
             </ul>
           ))}
         </div>
-        <address class="address">
-          <strong class="company-name">{COMPANY_NAME}</strong>
+        <address class={cx('address')}>
+          <strong class={cx('company-name')}>{COMPANY_NAME}</strong>
           {COPYRIGHT}
         </address>
       </div>
