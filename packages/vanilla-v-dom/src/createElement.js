@@ -36,7 +36,7 @@ const createElement = ({ type, props, children }) => {
   if (children && Array.isArray(children)) {
     children.forEach((child) => {
       if (child && isObject(child)) {
-        node.append(createElement(child));
+        node.appendChild(createElement(child));
       }
     });
   }
