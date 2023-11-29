@@ -11,6 +11,8 @@ const cx = classNames.bind(styles);
 export default function ArticlePage({
   thumbnailConfig, editor, updatedTime, title, shortDescription,
 }) {
+  const desc = editor.shortDescription ? `ㆍ${editor.shortDescription}` : '';
+
   return (
     <article class={cx('p-container')}>
       <header>
@@ -25,8 +27,7 @@ export default function ArticlePage({
           <div>
             <span class={cx('author')}>
               {`${faker.person.lastName()}${faker.person.firstName()}`}
-              ㆍ
-              {editor.shortDescription}
+              {desc}
             </span>
             <time class={cx('update-time')}>{formatDate(updatedTime)}</time>
           </div>
