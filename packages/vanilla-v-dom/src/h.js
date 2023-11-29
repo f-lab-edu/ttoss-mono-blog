@@ -10,7 +10,7 @@ import { TEXT_ELEMENT } from './constants';
 const h = (type, props, ...children) => ({
   type,
   props: props || {},
-  children: children.map((child) => {
+  children: children.flat().map((child) => {
     // 만약 문자열이나 숫자면 그대로 반환
     if (typeof child === 'string' || typeof child === 'number') {
       return { type: TEXT_ELEMENT, props: { nodeValue: child } };
