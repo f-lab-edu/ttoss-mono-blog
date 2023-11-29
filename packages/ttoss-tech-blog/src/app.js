@@ -4,8 +4,9 @@ import View from './view';
 import Controller from './controller';
 
 const App = () => {
-  const controller = new Controller(new Model(), new View());
-  const router = Router.createHistoryRouter(document.getElementById('root'));
+  const domNode = document.getElementById('root');
+  const controller = new Controller(new Model(), new View(domNode));
+  const router = Router.createHistoryRouter(domNode);
 
   router.addRoute('/', () => controller.setArticleList('tech'));
   router.addRoute('/tech', () => controller.setArticleList('tech'));
