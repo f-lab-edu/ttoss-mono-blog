@@ -1,25 +1,38 @@
 /** @jsx h */
 import { h } from 'vanilla-v-dom';
+import { fakerKO as faker } from '@faker-js/faker';
+import classNames from 'classnames/bind';
+import styles from './articlePage.module.css';
+import { EMOJI_PROFILE } from './constants';
+import { formatDate } from '../utils';
+
+const cx = classNames.bind(styles);
 
 export default function ArticlePage({
   thumbnailConfig, editor, updatedTime, title, shortDescription,
 }) {
   return (
-    <article>
+    <article class={cx('p-container')}>
       <header>
-        <img class="thumbnail" srcSet={thumbnailConfig.imageUrl} alt={thumbnailConfig.imageAlt} />
-        <h1 class="title">{title}</h1>
-        <section class="author-container">
-          <img srcSet={editor.imageUrl} alt="profile-img" />
+        <img
+          class={cx('thumb-img')}
+          srcset={thumbnailConfig.imageUrl}
+          alt={thumbnailConfig.imageAlt}
+        />
+        <h1 class={cx('p-title')}>{title}</h1>
+        <section class={cx('author-container')}>
+          <img srcset={EMOJI_PROFILE} alt="profile-img" />
           <div>
-            <span class="author">{editor.name}</span>
-            <time class="update-time">{updatedTime}</time>
+            <span class={cx('author')}>
+              {`${faker.person.lastName()}${faker.person.firstName()}`}
+              ㆍ
+              {editor.shortDescription}
+            </span>
+            <time class={cx('update-time')}>{formatDate(updatedTime)}</time>
           </div>
         </section>
       </header>
-      <section>
-        {shortDescription}
-      </section>
+      <section>{shortDescription}</section>
     </article>
   );
 }
