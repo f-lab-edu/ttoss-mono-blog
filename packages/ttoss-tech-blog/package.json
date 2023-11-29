@@ -28,6 +28,7 @@
     "vanilla-v-dom": "workspace:*"
   },
   "devDependencies": {
+    "@babel/plugin-transform-react-jsx": "^7.23.4",
     "@babel/preset-env": "link:./node_modules",
     "@faker-js/faker": "^8.3.1",
     "babel-loder": "link:./node_modules",
