@@ -22,7 +22,7 @@ export default function Navbar() {
         <div class={cx('navbar-content')}>
           <ul class={cx('navbar-menu')}>
             {NAV_LIST.map(({ title, href }) => (
-              <li class={cx('navbar-item')} data-resource-path={href}>
+              <li class={cx('navbar-item', ['typography--p', 'color--grey700'])} data-resource-path={href}>
                 {title}
               </li>
             ))}

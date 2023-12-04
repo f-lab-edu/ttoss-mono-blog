@@ -12,16 +12,16 @@ export default function Footer() {
       <div class={cx('footer-inner')}>
         <div class={cx('site-group-list')}>
           {SITE_GROUP_LISTS.map(({ title, items }) => (
-            <ul class={cx('site-group')}>
-              <li class={cx('site-group-title')}>{title}</li>
+            <ul class={cx('site-group', ['color--grey600'])}>
+              <li class={cx('site-group-title', ['typography--bold', 'color--grey800'])}>{title}</li>
               {items.map((text) => (
                 <li class={cx('site-group-item')}>{text}</li>
               ))}
             </ul>
           ))}
         </div>
-        <address class={cx('address')}>
-          <strong class={cx('company-name')}>{COMPANY_NAME}</strong>
+        <address class={cx('address', ['typography--small', 'color--grey500'])}>
+          <strong class={cx('company-name', ['typography--p', 'typography--bold', 'color--grey800'])}>{COMPANY_NAME}</strong>
           {COPYRIGHT}
         </address>
       </div>

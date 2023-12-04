@@ -28,7 +28,6 @@
     width: 170px;
     margin: 0;
     padding: 0;
-    color: #6b7684;
     list-style: none;
     font-size: 15px;
     line-height: 30px;
@@ -38,28 +37,14 @@
 
 .site-group-title {
     padding-bottom: 5px;
-    color: #333d4b;
-    font-weight: 700;
-    font-weight: bold;
-}
-
-.site-group-item {
-    color: #6b7684;
 }
 
 .address {
-    color: #8b95a1;
-    font-size: 13px;
-    font-style: normal;
-    line-height: 20px;
     white-space: pre-wrap; 
 }
 
 .company-name {
     display: block;
-    color: #333d4b;
-    font-size: 15px;
-    font-weight: bold;
     padding-bottom: 16px;
 }
 
