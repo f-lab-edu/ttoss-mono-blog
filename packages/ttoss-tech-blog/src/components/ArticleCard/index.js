@@ -22,9 +22,9 @@ export default function ArticleCard({
           alt={thumbnailConfig.imageAlt}
         />
         <div>
-          <span class={cx('card-title')}>{title}</span>
-          <span class={cx('subtitle')}>{subtitle}</span>
-          <time class={cx('update-time')}>{formatDate(updatedTime)}</time>
+          <h3 class={cx('card-title', ['typography--h3', 'typography--bold', 'color--grey800'])}>{title}</h3>
+          <h7 class={cx('subtitle', ['typography--h7', 'typography--regular', 'color--grey700'])}>{subtitle}</h7>
+          <time class={cx('update-time', ['typography--p', 'typography--regular', 'color--grey700'])}>{formatDate(updatedTime)}</time>
         </div>
       </a>
     </li>

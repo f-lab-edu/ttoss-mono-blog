@@ -19,7 +19,7 @@
 }
 
 .article-card:hover .card-title {
-    color: #3182f6;
+    color: var(--blue500);
 }
 
 .thumb-img {
@@ -39,10 +39,6 @@
     margin-top: 0;
     margin-bottom: 14px;
     overflow: hidden;
-    font-size: 36px;
-    font-weight: 700;
-    line-height: 1.4;
-    color: #333d4b;
     -o-text-overflow: ellipsis;
        text-overflow: ellipsis;
     word-break: keep-all;
@@ -58,17 +54,9 @@
     margin: 0;
     margin-bottom: 12px;
     line-height: 1.6;
-    color: #4e5968;
-    font-size: 17px;
     -o-text-overflow: ellipsis;
        text-overflow: ellipsis;
     -webkit-line-clamp: 2;
-}
-
-.update-time {
-    color: #8b95a1;
-    font-size: 15px;
-    line-height: 1.6;
 }
 
 @media only screen and (max-width: 640px) {
