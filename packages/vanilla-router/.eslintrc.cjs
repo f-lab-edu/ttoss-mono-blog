@@ -9,6 +9,7 @@ module.exports = {
   extends: ['airbnb', 'eslint:recommended'],
   rules: {
     'func-names': ['error', 'never'],
+    'import/prefer-default-export': 'off',
   },
   parserOptions: {
     ecmaVersion: 'latest',
