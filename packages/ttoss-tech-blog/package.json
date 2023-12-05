@@ -19,6 +19,7 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
+    "test:debug": "jest --debug",
     "dev": "webpack server"
   },
   "keywords": [],
@@ -30,6 +31,7 @@
   "devDependencies": {
     "@babel/plugin-transform-react-jsx": "^7.23.4",
     "@babel/preset-env": "link:./node_modules",
+    "babel-jest": "link:./node_modules",
     "@faker-js/faker": "^8.3.1",
     "babel-loder": "link:./node_modules",
     "classnames": "^2.3.2",
