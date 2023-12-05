@@ -98,7 +98,7 @@ const diff = (current, update) => {
 
   if (current?.type === update?.type) {
     // 엘리먼트 타입이 동일하더라도 키가 존재할 때 키가 다르면 다른 엘리먼트로 취급
-    if (current.props?.key !== update.props.key) {
+    if (current.props?.key !== update.props?.key) {
       return [{
         type: PATCH_REPLACE_NODE,
         update,

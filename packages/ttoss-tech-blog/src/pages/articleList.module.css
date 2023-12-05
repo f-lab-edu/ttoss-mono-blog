@@ -1,0 +1,27 @@
+.p-container-inner {
+    width: 85%;
+    height: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    margin-bottom: 192px;
+}
+
+.title-label{
+    display: inline-block;
+    width: 100%;
+    padding: 20px 0;
+    margin: 52px 0 32px 0;
+    background-color: var(--white);
+}
+
+.article-list {
+    -ms-flex-item-align: stretch;
+        -ms-grid-row-align: stretch;
+        align-self: stretch;
+    padding: 0;
+    list-style: none;
+}
+
+.article-list li:not(:first-of-type){
+    margin-top: 80px;
+}
