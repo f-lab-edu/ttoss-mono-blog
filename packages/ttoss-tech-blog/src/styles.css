@@ -154,3 +154,10 @@
 .typography--regular {
     font-weight: 400
 }
+
+*:not(input):not(textarea){
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
