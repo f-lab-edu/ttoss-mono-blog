@@ -3,11 +3,25 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/f-lab-edu/ttoss-mono-blog.git",
+    "directory": "packages/tiny-client"
+  },
+  "bug": {
+    "url": "https://github.com/f-lab-edu/ttoss-mono-blog/issues"
+  },
+  "author": "emayom <emayom7@gmail.com>",
+  "type": "module",
+  "engines": {
+    "node": ">=16"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:debug": "jest --debug"
   },
   "keywords": [],
-  "author": "",
   "license": "ISC",
   "devDependencies": {
     "typescript": "^5.2.2",
