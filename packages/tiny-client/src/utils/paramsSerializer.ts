@@ -46,7 +46,7 @@ export const paramsSerializer = (params: object = {}, arrayFormat: ArrayFormatTy
     .filter(([, value]) => value !== undefined)
     .map(([key, value]) => {
       if (Array.isArray(value)) return addArrayQueryParam(key, value, arrayFormat);
-      if (value instanceof Object) return addObjectQueryParam(key, value);
+      if (value instanceof Object && typeof value === 'object') return addObjectQueryParam(key, value);
       return encodeQueryParam(key, value);
     })
     .join('&')
